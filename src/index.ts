@@ -1,1 +1,1 @@
-export { default as GCPLogger } from "./GCPLogger.js";
+export { default as Parser } from "./Parser.js";

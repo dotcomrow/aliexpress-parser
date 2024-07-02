@@ -5,13 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "TS-Node",
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/ts-node",
+            "runtimeArgs": [
+                "--transpile-only",
+                // if you use esm
+                "--esm"
             ],
-            "program": "${workspaceFolder}/test/index.test.ts"
+            "program": "${file}",
+            "cwd": "${workspaceRoot}",
+            "internalConsoleOptions": "openOnSessionStart",
+            "skipFiles": [
+                "<node_internals>/**",
+                "node_modules/**"
+            ]
         }
     ]
 }
